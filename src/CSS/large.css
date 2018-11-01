@@ -1,0 +1,68 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media  screen and (min-width: 1400px) {
+   body {
+        font-size:26px
+    }
+     .header_itm img{
+        width: 100px;
+        height: 95px;
+    }
+      .title{
+        justify-self:center;
+        align-self: center;
+        margin-right: 5%;
+        letter-spacing: 2px;
+    }
+    .header_itm:nth-child(2){
+       justify-self:start;
+}
+    .header{
+        display: grid;
+        grid-auto-flow:row;
+        grid-template-columns: 1.5fr 4fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid-template-rows:95px;
+    }
+    .wrap_img{
+      height: 600px;
+
+    }
+    .imgclass{
+      height: 500px;
+    }
+   
+    .el-carousel__container{
+      height: 500px;
+    }
+     #DrivingSchool{
+      height: 450px;
+    }
+    .DrivingSchool_left{
+      height: 450px;
+    }
+    .DrivingSchool_right{
+     height: 380px;
+      right: -1%;
+    }
+.DrivingSchool_right_bottom ul {
+  bottom: 2%;
+  left: 50%;
+
+}
+.DrivingSchool_right_bottom_content{
+    -webkit-line-clamp: 6;
+    height: 215px;
+   
+}
+.DrivingSchool_right_bottom_content span {
+    font-size: 25px;
+}
+ .el-icon-d-arrow-right{
+ 
+ top: 86%;
+ right: 0%
+}
+.tickfoot{
+  bottom: -80%;
+  left: 50%;
+}
+}

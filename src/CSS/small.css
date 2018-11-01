@@ -1,0 +1,68 @@
+@media  screen and (min-width: 320px)and (max-width:414px) {
+  body {
+        font-size:18px
+    }
+    .header{
+        display: grid;
+        grid-auto-flow:row;
+        grid-template-columns: 2fr 5fr 0.8fr;
+        grid-template-rows:45px;
+    }
+    .title{
+        justify-self:end;
+        align-self: center;
+        margin-right: 5%;
+        letter-spacing: 2px;
+    }
+    .header_itm img{
+        width: 50px;
+        height: 45px;
+    }
+    .wrap_img{
+      height: 266px;
+
+    }
+    .imgclass{
+      height: 200px;
+    }
+   
+    .el-carousel__container{
+      height: 200px;
+    }
+    #DrivingSchool{
+      height: 200px;
+    }
+     .DrivingSchool_left{
+      height: 200px;
+    }
+    .DrivingSchool_right{
+     height: 150px;
+     right: -15%;
+    }
+    .DrivingSchool_right_top p{
+    font-size: 10px;
+    margin-left: 10%;
+}
+ .DrivingSchool_right_top span{
+  font-size: 9px;
+}
+.DrivingSchool_right_bottom ul {
+bottom: -15%;
+left: 50%;
+}
+.DrivingSchool_right_bottom_content{
+    -webkit-line-clamp: 4;
+    height: 92px;
+}
+.DrivingSchool_right_bottom_content span {
+    font-size: 7px;
+}
+.el-icon-d-arrow-right{
+ top: 84%;
+ right: 0%
+}
+.tickfoot{
+  bottom: -80%;
+  left: 50%;
+}
+}
