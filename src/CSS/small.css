@@ -36,33 +36,91 @@
       height: 200px;
     }
     .DrivingSchool_right{
+
      height: 150px;
-     right: -15%;
+     right: -9%;
     }
     .DrivingSchool_right_top p{
-    font-size: 10px;
+    font-size: 15px;
     margin-left: 10%;
 }
  .DrivingSchool_right_top span{
-  font-size: 9px;
+  font-size: 13px;
 }
 .DrivingSchool_right_bottom ul {
-bottom: -15%;
+bottom: -6%;
 left: 50%;
 }
 .DrivingSchool_right_bottom_content{
-    -webkit-line-clamp: 4;
-    height: 92px;
+    -webkit-line-clamp: 3;
+    height: 80px;
 }
 .DrivingSchool_right_bottom_content span {
-    font-size: 7px;
+    font-size: 12px;
 }
 .el-icon-d-arrow-right{
  top: 84%;
  right: 0%
 }
+  .mask_doc{
+    line-height: 32px;
+  }
 .tickfoot{
-  bottom: -80%;
+  top: 35%;
   left: 50%;
 }
+  .icon-shuxian{
+    left: 4%;
+    font-size: 32px;
+    top: 3%;
+}
+  .coach{
+      height: 22rem;
+  }
+    .coach_content{
+     display: grid;
+     grid-auto-flow:row;
+     grid-template-columns:  1fr 1.2fr 1.5fr;
+     grid-template-rows:10rem;
+}
+  .content_one{
+
+    align-self: start;
+}
+  .content_one img {
+     width: 80%;
+    height: 90px;
+    margin-left: 18px;
+}
+  .content_two i{
+    font-size: 50px;
+    margin-top: 25px;
+    margin-left: 10px
+}
+.content_two p:nth-child(2){
+  color:gray;
+  font-size: 15px;
+}
+.content_two p:nth-child(4){
+      margin-top: 10px;
+    font-size: 1px;
+}
+ .content_three {
+    font-size: 12px;
+    }
+ .three_list:nth-last-child(1),.three_list:nth-last-child(2){
+     margin-top: 5px;
+}
+.three_list_tiao{
+    height: 8px;
+    background-color: dodgerblue;
+}
+   .coach_footer{
+    display: grid;
+     grid-template-columns:  1fr 1fr 1fr ;
+     grid-template-rows:5rem;
+    }
+    .footer{
+       border-bottom-width: 0.3rem;
+  }
 }

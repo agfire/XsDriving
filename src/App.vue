@@ -1,8 +1,9 @@
 <template>
   <div id="app">
        <Header></Header>
-       <Transfromimg></Transfromimg>
-      <DrivingSchool :Drivingdata="Drivingdata"></DrivingSchool>
+       <Transfromimg :imgdata="imgdata"></Transfromimg>
+       <DrivingSchool :Drivingdata="Drivingdata"></DrivingSchool>
+       <Coach></Coach>
         <!--  <div class="introduce">
        <div class="company"><span>企业简介</span></div>
        <Popup :imgnum=jianjie></Popup>
@@ -18,40 +19,13 @@ import Header from './components/header.vue'
 import Transfromimg from './components/Transfromimg.vue'
 import Popup from './components/Popup'
 import DrivingSchool from './components/DrivingSchool.vue'
+import Coach from './components/Coach'
 export default {
   name: 'App',
-  components:{ Header,Transfromimg,Popup,DrivingSchool },
+  components:{ Header,Transfromimg,Popup,DrivingSchool,Coach},
   data () {
     return {
-      imgnum: [
-       
-       {
-         id:1,
-         url:"/static/0.png",
-         name:"wg",
-         age:"5",
-         type:"教练简介",
-         speak:"好好学习，天天向上",
-         title:"王旭越来越适应灾区的生活，和小玉相处越来越融洽，并发现了村子里几棵老茶树的商机，在鉴定了茶树合格的时候被告知小玉不见了，王旭着急地赶回村里。陈金水想让陈大光一步一个脚印踏实做生意，而陈大光却想卖给杨雪资源被陈金水阻拦，陈大光对陈金水大发雷霆不听劝。莱昂赌博成瘾，邱岩无可奈何。陈江河看出费尔南德的阴谋，并劝说骆玉珠想和杨氏集团连手，而骆玉珠因怀疑陈江河和杨雪的关系不单纯拒绝和杨氏集团合作，并且还和杨雪打价格战，陈江河费力讨好骆玉珠，骆玉珠却不理睬，陈江河背着玉珠见了骆父"
-       },
-       {
-         id:2,
-         url:"/static/1.png",
-         name:"we",
-         age:"5",
-         speak:"好好学习，天天向上",
-         title:"王旭越来越适应灾区的生活，和小玉相处越来越融洽，并发现了村子里几棵老茶树的商机，在鉴定了茶树合格的时候被告知小玉不见了，王旭着急地赶回村里。陈金水想让陈大光一步一个脚印踏实做生意，而陈大光却想卖给杨雪资源被陈金水阻拦，陈大光对陈金水大发雷霆不听劝。莱昂赌博成瘾，邱岩无可奈何。陈江河看出费尔南德的阴谋，并劝说骆玉珠想和杨氏集团连手，而骆玉珠因怀疑陈江河和杨雪的关系不单纯拒绝和杨氏集团合作，并且还和杨雪打价格战，陈江河费力讨好骆玉珠，骆玉珠却不理睬，陈江河背着玉珠见了骆父"
-       },
-       {
-         id:3,
-         url:"/static/0.png"
-       },
-       {
-        id:4,
-        url:"/static/1.png"
-       },
-      
-      ],
+      imgdata: [],
        Drivingdata:[{
          title:'',
          mark:'',
@@ -63,11 +37,18 @@ export default {
   },
   mounted: function () {
     this.$nextTick(function () {
-      this.$http.get('http://172.24.3.78/sys/company/list').then((res) => {
+      this.$http.get('http://106.12.80.211:8080/sys/company/list').then((res) => {
         console.log("获取的数据"+res)
         this.Drivingdata = res.body
         console.log(this.Drivingdata)
       })
+      
+ this.$http.get('http://106.12.80.211:8080/sys/Broadcast/list').then((res) => {
+        console.log("获取的数据图片"+res)
+        this.imgdata = res.body
+        console.log(this.imgdata)
+      })
+
     })
   },
   created () {
@@ -80,7 +61,7 @@ export default {
 
 p {
     display: block;
-    margin-block-start: 1em;
+    margin-block-start: 0em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;

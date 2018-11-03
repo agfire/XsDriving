@@ -1,7 +1,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media  screen and (min-width: 1400px) {
    body {
-        font-size:26px
+        font-size:34px
     }
      .header_itm img{
         width: 100px;
@@ -21,6 +21,7 @@
         grid-auto-flow:row;
         grid-template-columns: 1.5fr 4fr 1fr 1fr 1fr 1fr 1fr 1fr ;
         grid-template-rows:95px;
+        font-size: 26px;
     }
     .wrap_img{
       height: 600px;
@@ -34,14 +35,14 @@
       height: 500px;
     }
      #DrivingSchool{
-      height: 450px;
+      height: 600px;
     }
     .DrivingSchool_left{
-      height: 450px;
+      height: 600px;
     }
     .DrivingSchool_right{
-     height: 380px;
-      right: -1%;
+     height: 520px;
+      right: 0%;
     }
 .DrivingSchool_right_bottom ul {
   bottom: 2%;
@@ -50,19 +51,78 @@
 }
 .DrivingSchool_right_bottom_content{
     -webkit-line-clamp: 6;
-    height: 215px;
+    height: 280px;
    
 }
 .DrivingSchool_right_bottom_content span {
     font-size: 25px;
 }
- .el-icon-d-arrow-right{
- 
- top: 86%;
- right: 0%
+  .mask_doc{
+    line-height: 70px;
+    font-size: 30px;
+    }
+  .mask_title{
+font-size: 50px;
 }
 .tickfoot{
-  bottom: -80%;
-  left: 50%;
+ top: 60%;
+left: 50%;
 }
+    .mask_doc{
+    line-height: 50px;
+  }
+  .coach{
+      height: 58rem;
+    }
+.icon-shuxian{
+    left: 3%;
+    font-size: 50px;
+    top: 2%;
 }
+.coach_content{
+     grid-template-columns:  1fr 1fr 1fr   ;
+     grid-template-rows:25rem;
+     font-size: 35px;
+}
+  .content_one{
+    align-self: start;
+}
+  .content_one img {
+    width: 50%;
+    height: 250px;
+    right: 12%;
+    margin-top: -45px;
+}
+  .content_two i{
+  width: 47px;
+  font-size: 48px;
+  margin-top: 55px;
+}
+.content_two p:nth-child(2){
+  color:gray;
+  font-size: 20px;
+}
+.content_two p:nth-child(4){
+    margin-top: 33px;
+    font-size: 20px;
+}
+  .content_three{
+    margin-top: -50px;
+    }
+  
+ .three_list:nth-last-child(1),.three_list:nth-last-child(2){
+     margin-top: 20px;
+}
+.three_list_tiao{
+    height: 20px;
+    background-color: dodgerblue;
+}
+  .coach_footer{
+     display: grid;
+     grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+     grid-template-rows:16rem;
+    }
+  .footer{
+   border-bottom-width: 1rem;
+  }
+  }

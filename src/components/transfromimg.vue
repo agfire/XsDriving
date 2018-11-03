@@ -1,9 +1,9 @@
 <template>
     <div class="wrap_img">
   <el-carousel indicator-position="outside">
-    <el-carousel-item  v-for="item in imgdata" :key="item" ref=carousel>
+    <el-carousel-item  v-for="(item,index) in imgdata" :key="index" ref=carousel>
       <a href="#">
-        <img class="imgclass">
+        <img class="imgclass" :src="imgdata[index].url">
       </a>
     </el-carousel-item>
   </el-carousel>
@@ -15,27 +15,25 @@
 
 export default {
   name: 'transfromimg',
+  props: {
+  imgdata :{
+    type:Array
+  }
+  },
   data () {
       return {
           carouselimg: [],
-          imgdata:["/static/0.png",'/static/1.png',"/static/2.png","/static/3.png"],
+       
           
       }
   },
   mounted () {
   this.$nextTick(() => {
-       this.ChangeImg()   
+   
    })
   },
   methods: {
-    ChangeImg() {
-      this.carouselimg = document.querySelectorAll(".el-carousel__item img")
-      for(let i=0;i<this.imgdata.length;i++) {
-      this.carouselimg[i].setAttribute("src", this.imgdata[i]); 
-      
-      }
-      console.log(this.carouselimg)
-    }
+  
   },
   computed : {
   

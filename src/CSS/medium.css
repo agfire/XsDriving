@@ -62,8 +62,64 @@ left: 50%;
 
 }
 .tickfoot{
- bottom: -80%;
+ top: 50%;
   left: 50%;
 }
+  .mask_doc{
+    line-height: 40px;
+  }
+.icon-shuxian{
+    left: 4%;
+    font-size: 38px;
+    top: 3%;
+}
+.coach{
+  height: 28rem;
+}
 
+.coach_content{
+     grid-template-columns:  1fr 1.2fr 1.5fr  ;
+     grid-template-rows:12rem;
+
+}
+  .content_one{
+    align-self: start;
+}
+  .content_one img {
+    width: 48%;
+    height: 87px;
+    margin-left: 18px;
+    transform: scale(0.8)
+}
+   .content_two i{
+    font-size: 50px;
+    margin-top: 25px;
+    margin-left: 10px
+}
+.content_two p:nth-child(2){
+  color:gray;
+  font-size: 15px;
+}
+.content_two p:nth-child(4){
+      margin-top: 10px;
+    font-size: 1px;
+}
+   .content_three {
+    font-size: 12px;
+    }
+ .three_list:nth-last-child(1),.three_list:nth-last-child(2){
+     margin-top: 5px;
+}
+.three_list_tiao{
+    height: 8px;
+    background-color: dodgerblue;
+}
+   .coach_footer{
+    display: grid;
+     grid-template-columns:  1fr 1fr 1fr 1fr;
+     grid-template-rows:5rem;
+    }
+    .footer{
+        border-bottom-width: 0.5rem;
+      }
 }

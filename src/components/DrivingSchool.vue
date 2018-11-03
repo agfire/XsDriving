@@ -8,8 +8,8 @@
                     <p>{{Drivingdata[num].title}}<br><span>{{Drivingdata[num].mark}}</span></p> 
             </div>
            <div class="DrivingSchool_right_bottom">
-               <div class="DrivingSchool_right_bottom_content">
-                    <span>{{Drivingdata[num].doc}}</span><i  class="el-icon-d-arrow-right" @click="mask()"></i>
+               <div class="DrivingSchool_right_bottom_content" @click="mask()">
+                    <span>{{Drivingdata[num].doc}}{{Drivingdata[num].doc}}</span>
                </div>
                 <ul style="list-style: none">
                     <li>  <i class="  el-icon-minus" :class="{icon:iconactive}"   @click="change(0)"></i></li>
@@ -19,7 +19,9 @@
         </div>
         <transition name="slide-fade">
         <div class="mask" v-show="ismask">
-            <span class="mask_title">{{Drivingdata[num].title}}</span>
+            <hr> 
+            <span class="mask_title">{{Drivingdata[num].title}}</span>  
+           <hr> <span class="mask_doc" style="color: white">{{Drivingdata[num].doc}}</span> 
             <div class="tickfoot" @click="detailshow=false">
                 <i @click="mask()"></i>
             </div>
@@ -64,7 +66,7 @@ created () {
 
 <style scoped>
 #DrivingSchool {
-    width: 80%;
+    width: 90%;
     display: table;
     margin: 0 auto;
     position: relative;
@@ -91,9 +93,7 @@ created () {
 
  color: gray;
 }
-.el-icon-caret-right{
-    right: 0px;
-}
+
 .DrivingSchool_right_bottom {
 position: relative;
 height: 75%;
@@ -130,6 +130,7 @@ display:  inline-block;
   background: rgba(7, 17, 27, 0.7);
   transition: all 1s;
   text-align: center;
+  left: 10%;
 }
 .tickfoot{
   position: relative;
@@ -142,6 +143,5 @@ display:  inline-block;
 .tickfoot i{background: url('../../static/x.png');width: 32px;height: 32px; display: inline-block;}
 .mask_title{
 color: white;
-font-size: 25px;
 }
 </style>
