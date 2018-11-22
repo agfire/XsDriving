@@ -1,16 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '../App.vue'
-import Hearde from '../../src/components/header.vue'
+import home from '../components/home.vue'
+import newlist from '../components/newlist.vue'
 Vue.use(Router)
 
 export default new Router({
    routes: [
     {
-      path: '/App',
-      name: 'App',
-      component: App
+      path: '/',
+      name: 'home',
+      component: home
     },
-
+    {
+      path: '/home',
+      name: 'home',
+      component: home
+    },
+    {
+      path: '/newlist',
+      name: 'newlist',
+      component: newlist
+    },
   ] 
 })

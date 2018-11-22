@@ -83,20 +83,20 @@ created () {
     transform: translateY(-50%);
     background-color: white;
     margin-right: 20px;
+    opacity: 0.95;
 }
 .DrivingSchool_right_top p{
     color: black;
-   
     margin-left: 10%;
 }
 .DrivingSchool_right_top span{
-
  color: gray;
 }
 
 .DrivingSchool_right_bottom {
 position: relative;
 height: 75%;
+padding-left: 20px;
 }
 .DrivingSchool_right_bottom ul {
 position: absolute;
@@ -133,13 +133,15 @@ display:  inline-block;
   left: 10%;
 }
 .tickfoot{
-  position: relative;
+  position:fixed;
   width: 32px;
   height: 32px;
   font-size: 32px;
-  transform: translateX(-50%);
-  right: -90%;
+  bottom:5%;
+  left: 50%;
+ 
 }
+
 .tickfoot i{background: url('../../static/x.png');width: 32px;height: 32px; display: inline-block;}
 .mask_title{
 color: white;

@@ -4,7 +4,10 @@
            <img src="../../static/菜单.png"/>
             <transition name="slide-fade">
         <ul   class="menu_list" v-if="state">
-            <li v-for='item in headerdata'><a href="#">{{item}}</a></li>
+            <li v-for='(item,index) in headerdata' :key="index"> 
+         <a v-if="index!=0"  :href="links(index)">{{item}}</a>
+         <router-link v-else to="/home">{{item}}</router-link>
+      </li>
         </ul>
             </transition>
        </div>
@@ -16,7 +19,7 @@
 export default {
     name: 'titles',
     props: {
-        
+    
     },
     data () {
         return {
@@ -27,17 +30,25 @@ export default {
           "企业简介",
           "驾校简介",
           "金牌教练",
-          "驾校新闻",
+          "新闻中心",
           "报名"
          ],
-         state:false
+         state:false,
+         ids:['#DrivingSchool','#Coach','#NewCentre','#CoachProcess','#signup'],
         }
     },
     methods: {
       handleclick () {
       this.state=!this.state
      
+      },
+        links (index) {
+    if(index==0){
+        return false
       }
+     this.link=this.ids[index]
+     return this.link
+     }
     }
 }
 </script>
@@ -57,7 +68,10 @@ export default {
 #titles{
     width: 75%;
     justify-self:end;
-
+    align-self: center;
+    z-index: 10;
+    background-color: white;
+    height: 30px;
 }
 .menu_wrap img{
  width: 100%;
@@ -71,15 +85,18 @@ export default {
     right: 5%;
     top: 77%;
     z-index: 10;
-     box-shadow: 0 0 0px 10000px rgba(0,0,0,0.5);
+    background-color: rgba(60, 135, 255, 0.6);
+    box-shadow: 0 0 0px 100px rgba(60, 135, 255, 0.6);
 }
 .menu_wrap ul li {
     margin-bottom:20px;
     font-size: 16px;
+ 
+  
 }
 .menu_wrap ul li a{
     text-decoration: none;
-    color:gray;
+    color:white;
     
 }
 </style>

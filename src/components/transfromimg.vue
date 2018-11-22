@@ -43,10 +43,8 @@ export default {
 
 <style lang="scss">
  .wrap_img {
-     position: relative;
      width: 100%;
-    
-    
+   
  }
 .el-carousel__item a {
   display: block;

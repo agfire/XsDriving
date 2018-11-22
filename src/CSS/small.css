@@ -15,9 +15,13 @@
         letter-spacing: 2px;
     }
     .header_itm img{
-        width: 50px;
+        width: 150px;
         height: 45px;
     }
+    .coach_top{
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
     .wrap_img{
       height: 266px;
 
@@ -65,17 +69,20 @@ left: 50%;
   .mask_doc{
     line-height: 32px;
   }
-.tickfoot{
-  top: 35%;
-  left: 50%;
-}
-  .icon-shuxian{
-    left: 4%;
+
+  .icon-shuxians{
+    left: -7%;
     font-size: 32px;
-    top: 3%;
+    top: -8%;
+}
+.icon-shuxianh{
+	left: 4%;
+	font-size: 50px;
+	top: -1%; 
+	 
 }
   .coach{
-      height: 22rem;
+      height: 21rem;
   }
     .coach_content{
      display: grid;
@@ -83,13 +90,17 @@ left: 50%;
      grid-template-columns:  1fr 1.2fr 1.5fr;
      grid-template-rows:10rem;
 }
+  .coach_footer img {
+    transform: scale(1)
+    
+    }
   .content_one{
 
     align-self: start;
 }
   .content_one img {
      width: 80%;
-    height: 90px;
+    height: 70px;
     margin-left: 18px;
 }
   .content_two i{
@@ -118,9 +129,227 @@ left: 50%;
    .coach_footer{
     display: grid;
      grid-template-columns:  1fr 1fr 1fr ;
-     grid-template-rows:5rem;
+     grid-template-rows:4rem ;
     }
     .footer{
        border-bottom-width: 0.3rem;
   }
+
+
+.NewCentre {
+	height: 45rem;
+}
+
+    .newcentre_content{
+     width:100%;
+     height: 40rem;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 12rem 12rem 12rem;
+     grid-column-gap: 3%;
+     grid-row-gap: 2%;
+ }
+ .newcentre_cl_left{
+  width: 80px;
+  height: 60px;
+  display: inline-table;
+
+  text-align: center;
+  color: white
+ }
+ .newcentre_cl_left p:nth-child(2) {
+     font-size: 15px;
+  
+ }
+ .newcentre_cl_right{
+     position: relative;
+    display: inline-table;
+    font-size: 15px;
+ }
+.clr_text {
+   word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 4; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+    font-size: 15px;
+    color: gray;
+}
+
+.icon-back{
+position:absolute;
+right: 0%;
+top: -50%;
+font-size: 28px;
+transform: rotate(180deg);
+color: gray;
+cursor: pointer;
+}
+
+
+
+
+.CoahProcess{
+    width: 90%;
+    height: 25rem;
+    margin:1rem auto;
+
+}
+.wrapperProcess{
+    width: 90%;
+    height: 100%;
+    margin:  0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4,1rem);
+    grid-gap: 0.1rem;
+}
+.Process_list{
+background-repeat: no-repeat;
+background-size: 100% 100%;
+display: flex;
+align-items: flex-center;
+}
+.Plist_text{
+background: url('../../static/tixing.png');
+height:20px;
+width: 100%;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+font-size: 9px;
+line-height: 19px;
+color: rgba(60, 135, 255, 1);
+
+}
+
+.wrapperProcess .Process_list:nth-child(10) {
+ grid-area: 4/2/5/3
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.Teachvideo{
+width: 90%;
+margin: 0 auto;
+height: 40rem;
+}
+.videowrapper{
+    margin: 2rem auto;
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+.videowrapper div {
+ background-color: gray;    
+}
+.pagination{
+    margin-top: 20px;
+    display: table;
+    margin: 0 auto;
+}
+.video{
+    width: 100%;
+    height: 102px;
+}
+  .playimg{
+   width: 50px;
+   height: 50px; 
+    }
+
+  .Student{
+ width: 80%;
+ margin:3rem auto;
+
+}
+  .signup{
+    margin-top: 5rem;
+   background-color: rgba(60, 135, 255, 1);
+}
+.wrappersign{
+  display: inline-block;
+  width: 100%;
+  height: 90%;
+  background-color: white
+  }
+  .elform{
+      display: table;
+      margin: 5rem auto;
+
+  }
+  .input{
+    width: 100%;
+  }
+
+
+ .Saddress{
+width: 90%;
+height: auto;
+margin:0 auto;
+
+}
+.bm-view {
+  width: 100%;
+  height: 30rem;
+}
+.sample {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  background: rgba(0,0,0,0.5);
+  overflow: hidden;
+  box-shadow: 0 0 5px #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  font-size: 18PX;
+}
+.sample, .active {
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+}
+.footwrapper{
+width: 90%;
+display: inline-block;
+height: 15rem;
+background: #3c87ff;
+position: absolute
+
+}
+.Sfooter{
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  height: 90%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  color: #fff;
+  font-size: 13px;
+  margin-top: 10px;
+  justify-items: center;
+
+}
+
+
+.left span,.center span,.right span {
+  display: block;
+
+}
+.left p,.center p,.right p{
+  font-size: 12px;
+
+}
+
+  .Sfooter img {
+    transform: scale(0.5)
+    
+    }
 }

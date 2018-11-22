@@ -1,7 +1,7 @@
 <template>
     <div class="Popup">
      
-         <div v-for="(i,index) in imgnum" class=Popup_itm><img  v-on:click.stop="mask($event)" :alt=index  :src="i.url" ></div>
+         <div v-for="(i,index) in imgnum" class=Popup_itm :key="index"><img  v-on:click.stop="mask($event)" :alt=index  :src="i.url" ></div>
             <div class="masks" v-if="isActive"></div>
             <transition name="slide-fade">
             <div class="content" v-show="iscontent">

@@ -1,70 +1,180 @@
+
 <template>
-    <div class='coach'>
-      <div class="coach_top">
-          <i class="iconfont icon-shuxian"></i>
-          <span class="top_one"><b>一线教练</b></span></br>
-          <span class="top_two">First online Coach</span>
-      </div>
+    <div id="Coach" class='coach'>
+      <Tick :Tickdata="Tickdata"></Tick>
        <div class="coach_content">
            <div class="content_one">
-               <img src="../../static/1.png">
+               <img :src='coachdata[number].avatar_url'>
            </div>
             <div class="content_two">
-                <p>朱归强</p>
+                <p>{{coachdata[number].name}}</p>
               
-                <p>科目一</p>
-                  <i class="iconfont icon-shuxian icon-shuxians" style="transform: rotate(90deg)"></i>
-                <p>热爱学习，天坛上上，大哥，来跟袭来贵来啊快发的广告费</p>
+                <p>{{coachdata[number].type}}</p>
+                  <i class="iconfont icon-shuxian  icon-shuxianh" style="transform: rotate(90deg)"></i>
+                <p>{{coachdata[number].synopsis}}</p>
             </div>
              <div class="content_three">
-                 <div class="three_list"  v-for="(item,index) in coachdata">
-                     <span>{{item.name}}</span>
+                 <div  v-for="(item,index) in coachdata[number].service" :key="index">
+                     <span>{{item.exprece}}</span>
                       <div  class="three_list_tiao" :style="widths(item)"></div>
                  </div>
              </div>
        </div>
-        <div class="coach_footer">
-            <div class="footer" v-for="(item,index) in num">
-                <img  style="width: 60%;height: 90%; border-radius: 50%" src="../../static/1.png">
+        <div class="coach_footer" ref="footerlist">
+            <div v-for="(item,index) in coachdata.length-num" class="footer"  :class="borderclass(index)" :key="index">
+                <img  :alt="index"  style="width: 50%;height: 90%; border-radius: 50% " :src='coachdata[index].avatar_url' @click="bordercolor($event,index)">
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Tick from './Tick'
+import Vue from 'Vue'
 export default {
     name: 'Coach',
+    props: {
+       coachdata:Array 
+    },
+
     data () {
         return {
-            num:null,
-            coachdata:[
+            Tickdata:{
+            name :'一线教练',
+            doc:'One Online Coach'
+            },
+            number:0,
+            num:0,
+            border:0,
+           /* coachdata:[
                 {
-                name:"教学经验",
-                width:70,
+                name:"朱归强",
+                type:"科目二",
+                doc:"热爱学习，天坛上上，大哥，来跟袭来贵来啊快发的广告费",
+                imgurl:'../../static/0.png',
+                service:[
+                 {
+                 exprece:"教学经验",
+                 ewidth:80
+                 },
+                {
+                 exprece:"教学质量",
+                 ewidth:70
+                 }, {
+                 exprece:"教学服务",
+                 ewidth:90
+                 }
+                ]
                 },
                 {
-                name:"教学实训",
-                width:80,
+                name:"朱大肠",
+                type:"科目一",
+                doc:"热爱学习，天坛上上，大哥，来跟袭来贵来啊快发的广告费",
+                imgurl:'../../static/1.png',
+                 service:[
+                 {
+                 exprece:"教学经验",
+                 ewidth:90
+                 },
+                   {
+                 exprece:"教学质量",
+                 ewidth:80
+                 }, {
+                 exprece:"教学服务",
+                 ewidth:90
+                 }
+                ]
                 },
                 {
-                name:"教学服务",
-                width:90,
-                }
-            ]
+                name:"猪猪侠",
+                type:"科目三",
+                doc:"热爱学习，天坛上上，大哥，来跟袭来贵来啊快发的广告费",
+                imgurl:'../../static/3.png',
+                 service:[
+                 {
+                 exprece:"教学经验",
+                 ewidth:80
+                 },
+                   {
+                 exprece:"教学质量",
+                 ewidth:95
+                 }, {
+                 exprece:"教学服务",
+                 ewidth:91
+                 }
+                ]
+                },
+                 {
+                
+                name:"朱归强",
+                type:"科目二",
+                doc:"热爱学习，天坛上上，大哥，来跟袭来贵来啊快发的广告费",
+                   imgurl:'../../static/1.png',
+                 service:[
+                 {
+                 exprece:"教学经验",
+                 ewidth:80
+                 },
+                   {
+                 exprece:"教学质量",
+                 ewidth:75,
+                 exprece:"教学服务",
+                 ewidth:92
+                 }
+                ]
+                },
+                {
+                 name:"朱大肠",
+                 type:"科目三",
+                 doc:"热爱学习，天坛上上，大哥，来跟袭来贵来啊快发的广告费",
+                imgurl:'../../static/1.png',
+                 service:[
+                 {
+                 exprece:"教学经验",
+                 ewidth:80
+                 },
+                   {
+                 exprece:"教学质量",
+                 ewidth:85
+                 }, {
+                 exprece:"教学服务",
+                 ewidth:93
+                 }
+                ]
+                },
+            ]*/
         }
     },
+    components: {Tick},
     methods: {
         widths (item) {
-            let style= 'width:'+item.width+'%'
+            let style= 'width:'+item.ewidth+'%'
             return  style
+        },
+        bordercolor(e,index) {
+        this.border = index
+        console.log(this.border)
+        this.number = index
+    
+        Vue.set(this.number)
+        Vue.set(this.coachdata[this.number])
+        },
+        borderclass(index) {
+        return {
+        footer_one:index==this.border,
+        footer_two:index!=this.border
+         }
         }
+    },
+    computeds: {
+      
     },
     created () {
         if(document.body.clientWidth>1400){
-            this.num=5
+            this.num=1
         }
         else if(document.body.clientWidth>=619&&document.body.clientWidth<1400){
-            this.num=4
+            this.num=2
         }
         else {
             this.num=3
@@ -82,23 +192,7 @@ export default {
     overflow: hidden;
     background: white;
 }
-.coach_top{
-    margin-left: 1rem;
-    margin-top: 1rem;
 
-}
-.top_two{
-   margin-left: 5%;
-   color: gray;
-}
-.top_one{
-     margin-left: 6%;
-
-}
-.icon-shuxian{
-    color: deepskyblue;
-    position: absolute;
-}
 .coach_content{
     margin-top: 5%;
     display: grid;
@@ -112,6 +206,10 @@ border-radius: 50%;
 position: absolute;
 right: 2%;
 }
+.icon-shuxian{
+    color: deepskyblue;
+    position: absolute;
+}
  .content_two{
 align-self: start;
 padding-left: 20px;
@@ -121,8 +219,14 @@ position: relative;
     text-align: center;
 }
 .footer{
- border:1px solid transparent;
+border:1px solid transparent;
 border-bottom-color: cornflowerblue;
-
+border-bottom-width:0.2rem;
+}
+.footer_one {
+  border-bottom-color:gold;  
+}
+.footer_two {
+   border-bottom-color:cornflowerblue;  
 }
 </style>

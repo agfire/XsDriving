@@ -10,8 +10,13 @@ import "./Font/font_2/iconfont.css"
 import './CSS/small.css'
 import './CSS/medium.css'
 import './CSS/large.css'
+
+
 Vue.use(ElementUI)
 Vue.use(Vuesource)
+
+  
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
